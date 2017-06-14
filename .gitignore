@@ -95,3 +95,17 @@ ENV/
 .ropeproject
 
 # End of https://www.gitignore.io/api/python
+
+
+#
+# CCh Personal stuff
+#
+
+# my submissions folder
+Submission/      
+
+# vscode project folder
+.vscode/         
+
+# PyCharm project folder
+.idea
