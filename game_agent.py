@@ -34,7 +34,7 @@ def custom_score(game, player):
     float
         The heuristic value of the current game state to the specified player.
     """
-    # TODO: finish custom_score
+    # Done: finish custom_score
 
     if game.is_loser(player):
         return float("-inf")
@@ -45,7 +45,7 @@ def custom_score(game, player):
     own_moves = len(game.get_legal_moves(player))
     opp_moves = len(game.get_legal_moves(game.get_opponent(player)))
 
-    return float(own_moves - 2.5 * opp_moves)
+    return float(own_moves - 4 * opp_moves)
 
 
 def custom_score_2(game, player):
@@ -70,7 +70,7 @@ def custom_score_2(game, player):
     float
         The heuristic value of the current game state to the specified player.
     """
-    # TODO: finish custom_score_2
+    # Done: finish custom_score_2
 
     if game.is_loser(player):
         return float("-inf")
@@ -106,7 +106,7 @@ def custom_score_3(game, player):
     float
         The heuristic value of the current game state to the specified player.
     """
-    # TODO: finish custom_score_3
+    # Done: finish custom_score_3
 
     if game.is_loser(player):
         return float("-inf")
@@ -115,8 +115,9 @@ def custom_score_3(game, player):
         return float("inf")
 
     own_moves = len(game.get_legal_moves(player))
+    opp_moves = len(game.get_legal_moves(game.get_opponent(player)))
 
-    return float(own_moves)
+    return float(own_moves - 0.5 * opp_moves)
 
 
 class IsolationPlayer:
@@ -241,7 +242,7 @@ class MinimaxPlayer(IsolationPlayer):
         if self.time_left() < self.TIMER_THRESHOLD:
             raise SearchTimeout()
 
-        # TODO: 1. finish MinimaxPlayer.minimax
+        # Done: 1. finish MinimaxPlayer.minimax
 
         # Following implementation based on:
         #   AIMA MiniMax algorithm
@@ -329,7 +330,7 @@ class AlphaBetaPlayer(IsolationPlayer):
         """
         self.time_left = time_left
 
-        # TODO: 3. finish AlphaBetaPlayer.get_move
+        # Done: 3. finish AlphaBetaPlayer.get_move
 
         # Based on Iterative Deepening Search algorithm
         #   (see https://github.com/aimacode/aima-pseudocode/blob/master/md/Iterative-Deepening-Search.md)
@@ -395,7 +396,7 @@ class AlphaBetaPlayer(IsolationPlayer):
         if self.time_left() < self.TIMER_THRESHOLD:
             raise SearchTimeout()
 
-        # TODO: 2. finish AlphaBetaPlayer.alphabeta
+        # Done: 2. finish AlphaBetaPlayer.alphabeta
 
         # Following implementation based on:
         #   AIMA Alpha-Beta Search algorithm,
